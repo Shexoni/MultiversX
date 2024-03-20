@@ -94,11 +94,7 @@ describe('Footer Builders Column', () => {
   });
 });
 
-describe.only('Footer Ecosystem Column', () => {
-  beforeEach(() => {
-    cy.visit('/');
-  });
-
+describe('Footer Ecosystem Column', () => {
   beforeEach(() => {
     cy.visit('/');
   });
@@ -134,7 +130,6 @@ describe.only('Footer Ecosystem Column', () => {
   it('Should redirect to "/service-providers"', () => {
     cy.get('.footer_links-wrap > div:nth-of-type(3)')
       .contains('Service Providers')
-
       .click();
     cy.url().should('eq', 'https://multiversx.com/ecosystem/service-providers');
   });
@@ -145,21 +140,100 @@ describe('Footer Community Column', () => {
     cy.visit('/');
   });
 
-  describe('Footer Resources Column', () => {
-    beforeEach(() => {
-      cy.visit('/');
-    });
+  it('Should redirect to "/events"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(4)')
+      .contains('Events Calendar')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/events');
   });
 
-  describe('Footer About Column', () => {
-    beforeEach(() => {
-      cy.visit('/');
-    });
+  it('Should redirect to governance page', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(4)')
+      .contains('Governance')
+      .invoke('removeAttr', 'target')
+      .click();
+    cy.url().should('eq', 'https://governance.multiversx.com/');
   });
 
-  describe('Socials', () => {
-    beforeEach(() => {
-      cy.visit('/');
-    });
+  it('Should be visible"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(4)')
+      .contains('Ambassadors Program')
+      .should('be.visible');
+  });
+
+  it('Should redirect to "/faq"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(4)').contains('FAQ').click();
+    cy.url().should('eq', 'https://multiversx.com/faq');
+  });
+
+  it('Should redirect to "/blog"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(4)').contains('Blog').click();
+    cy.url().should('eq', 'https://multiversx.com/blog');
+  });
+});
+
+// describe('Footer Resources Column', () => {
+//   beforeEach(() => {
+//     cy.visit('/');
+//   });
+
+//   it('Should redirect to whitepaper', () => {
+//     cy.get('.footer_links-wrap > div:nth-of-type(5)')
+//       .contains('Whitepaper')
+//       .invoke('removeAttr', 'target')
+//       .click();
+//     cy.url().should(
+//       'eq',
+//       'https://assets-global.website-files.com/6597cc7be68d63ec0c8ce338/65b22e7c42f65345c285ccb8_multiversx-whitepaper.pdf'
+//     );
+//   });
+
+//   it.only('Should redirect to economics paper', () => {
+//     cy.get('.footer_links-wrap > div:nth-of-type(5)')
+//       .contains('Economics Paper')
+//       .invoke('removeAttr', 'target')
+//       .click();
+//     cy.url().should(
+//       'eq',
+//       'https://assets-global.website-files.com/6597cc7be68d63ec0c8ce338/65b2970798d806096d77d786_multiversx-economics-paper.pdf'
+//     );
+//   });
+
+//   it('Should redirect to token metrics', () => {
+//     cy.get('.footer_links-wrap > div:nth-of-type(5)')
+//       .contains('Token Metrics')
+//       .invoke('removeAttr', 'target')
+//       .click();
+//     cy.url().should(
+//       'eq',
+//       'https://assets-global.website-files.com/6597cc7be68d63ec0c8ce338/65ae95b4c88ea4ffb4b03be7_multiversx-token-metrics.pdf'
+//     );
+//   });
+// });
+
+describe('Footer About Column', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
+  it('Should redirect to "/transformation"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(6)')
+      .contains('From Elrond to MultiversX')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/transformation');
+  });
+
+  // cypress doesn't like asserting downloads
+  it('Should be visible', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(6)')
+      .contains('Media Kit')
+      .should('be.visible');
+  });
+
+  it('Should redirect to "/careers"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(6)')
+      .contains('Careers')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/careers');
   });
 });
