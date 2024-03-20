@@ -40,7 +40,7 @@ describe('Footer Individuals Column', () => {
   });
 });
 
-describe.only('Footer Builders Column', () => {
+describe('Footer Builders Column', () => {
   beforeEach(() => {
     cy.visit('/');
   });
@@ -94,9 +94,49 @@ describe.only('Footer Builders Column', () => {
   });
 });
 
-describe('Footer Ecosystem Column', () => {
+describe.only('Footer Ecosystem Column', () => {
   beforeEach(() => {
     cy.visit('/');
+  });
+
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
+  it('Should redirect to "/ecosystem"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(3)')
+      .contains('Discover')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/ecosystem');
+  });
+
+  it('Should redirect to "/projects"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(3)')
+      .contains('Projects')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/ecosystem/projects');
+  });
+
+  it('Should redirect to "/partners"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(3)')
+      .contains('Partners')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/ecosystem/partners');
+  });
+
+  it('Should redirect to "/validators"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(3)')
+      .contains('Validators')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/ecosystem/validators');
+  });
+
+  it('Should redirect to "/service-providers"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(3)')
+      .contains('Service Providers')
+
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/ecosystem/service-providers');
   });
 });
 
