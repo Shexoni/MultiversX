@@ -1,4 +1,4 @@
-describe('Footer Smoke Tests', () => {
+describe('Footer Individuals Column', () => {
   beforeEach(() => {
     cy.visit('/');
   });
@@ -37,5 +37,89 @@ describe('Footer Smoke Tests', () => {
       .invoke('removeAttr', 'target')
       .click();
     cy.url().should('eq', 'https://environment.multiversx.com/');
+  });
+});
+
+describe.only('Footer Builders Column', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
+  it('Should redirect to "/start-building"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(2)')
+      .contains('Start Building')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/builders/start-building');
+  });
+
+  it('Should be visible"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(2)')
+      .contains('Fundamentals')
+      .should('be.visible');
+  });
+
+  it('Should be visible"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(2)')
+      .contains('Migration Guide')
+      .should('be.visible');
+  });
+
+  it('Should redirect to docs', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(2)')
+      .contains('Technology')
+      .invoke('removeAttr', 'target')
+      .click();
+    cy.url().should('eq', 'https://docs.multiversx.com/');
+  });
+
+  it('Should redirect to validators docs', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(2)')
+      .contains('Become a Validator')
+      .invoke('removeAttr', 'target')
+      .click();
+    cy.url().should('eq', 'https://docs.multiversx.com/validators/overview/');
+  });
+
+  it('Should be visible"', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(2)')
+      .contains('Hackathons')
+      .should('be.visible');
+  });
+
+  it('Should redirect to environment page', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(2)')
+      .contains('Releases')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/releases');
+  });
+});
+
+describe('Footer Ecosystem Column', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+});
+
+describe('Footer Community Column', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
+  describe('Footer Resources Column', () => {
+    beforeEach(() => {
+      cy.visit('/');
+    });
+  });
+
+  describe('Footer About Column', () => {
+    beforeEach(() => {
+      cy.visit('/');
+    });
+  });
+
+  describe('Socials', () => {
+    beforeEach(() => {
+      cy.visit('/');
+    });
   });
 });
