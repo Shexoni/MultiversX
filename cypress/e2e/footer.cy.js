@@ -237,3 +237,40 @@ describe('Footer About Column', () => {
     cy.url().should('eq', 'https://multiversx.com/careers');
   });
 });
+
+describe.only('Legal', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
+  it('Should redirect to "/disclaimer"', () => {
+    cy.get('#w-node-_1d6f5599-f99e-66ac-6ef4-0a5eb0f7e88f-2bf1fd79')
+      .contains('Disclaimer')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/legal/disclaimer');
+  });
+
+  it('Should redirect to "/responsible-disclosure-policy"', () => {
+    cy.get('#w-node-_1d6f5599-f99e-66ac-6ef4-0a5eb0f7e88f-2bf1fd79')
+      .contains('Responsible Disclosure Policy')
+      .click();
+    cy.url().should(
+      'eq',
+      'https://multiversx.com/legal/responsible-disclosure-policy'
+    );
+  });
+
+  it('Should redirect to "/privacy-policy"', () => {
+    cy.get('#w-node-_1d6f5599-f99e-66ac-6ef4-0a5eb0f7e88f-2bf1fd79')
+      .contains('Privacy Policy')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/legal/privacy-policy');
+  });
+
+  it('Should redirect to "/terms-of-use"', () => {
+    cy.get('#w-node-_1d6f5599-f99e-66ac-6ef4-0a5eb0f7e88f-2bf1fd79')
+      .contains('Terms of Use')
+      .click();
+    cy.url().should('eq', 'https://multiversx.com/legal/terms-of-use');
+  });
+});
