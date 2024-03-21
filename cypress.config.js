@@ -7,4 +7,5 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://multiversx.com/',
   },
+  chromeWebSecurity: false,
 });

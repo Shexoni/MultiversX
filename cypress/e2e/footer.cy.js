@@ -172,44 +172,44 @@ describe('Footer Community Column', () => {
   });
 });
 
-// describe('Footer Resources Column', () => {
-//   beforeEach(() => {
-//     cy.visit('/');
-//   });
+describe('Footer Resources Column', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
 
-//   it('Should redirect to whitepaper', () => {
-//     cy.get('.footer_links-wrap > div:nth-of-type(5)')
-//       .contains('Whitepaper')
-//       .invoke('removeAttr', 'target')
-//       .click();
-//     cy.url().should(
-//       'eq',
-//       'https://assets-global.website-files.com/6597cc7be68d63ec0c8ce338/65b22e7c42f65345c285ccb8_multiversx-whitepaper.pdf'
-//     );
-//   });
+  it('Should redirect to whitepaper', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(5)')
+      .contains('Whitepaper')
+      .invoke('removeAttr', 'target')
+      .click();
+    cy.url().should(
+      'eq',
+      'https://assets-global.website-files.com/6597cc7be68d63ec0c8ce338/65b22e7c42f65345c285ccb8_multiversx-whitepaper.pdf'
+    );
+  });
 
-//   it.only('Should redirect to economics paper', () => {
-//     cy.get('.footer_links-wrap > div:nth-of-type(5)')
-//       .contains('Economics Paper')
-//       .invoke('removeAttr', 'target')
-//       .click();
-//     cy.url().should(
-//       'eq',
-//       'https://assets-global.website-files.com/6597cc7be68d63ec0c8ce338/65b2970798d806096d77d786_multiversx-economics-paper.pdf'
-//     );
-//   });
+  it('Should redirect to economics paper', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(5)')
+      .contains('Economics Paper')
+      .invoke('removeAttr', 'target')
+      .click();
+    cy.url().should(
+      'eq',
+      'https://assets-global.website-files.com/6597cc7be68d63ec0c8ce338/65b2970798d806096d77d786_multiversx-economics-paper.pdf'
+    );
+  });
 
-//   it('Should redirect to token metrics', () => {
-//     cy.get('.footer_links-wrap > div:nth-of-type(5)')
-//       .contains('Token Metrics')
-//       .invoke('removeAttr', 'target')
-//       .click();
-//     cy.url().should(
-//       'eq',
-//       'https://assets-global.website-files.com/6597cc7be68d63ec0c8ce338/65ae95b4c88ea4ffb4b03be7_multiversx-token-metrics.pdf'
-//     );
-//   });
-// });
+  it('Should redirect to token metrics', () => {
+    cy.get('.footer_links-wrap > div:nth-of-type(5)')
+      .contains('Token Metrics')
+      .invoke('removeAttr', 'target')
+      .click();
+    cy.url().should(
+      'eq',
+      'https://assets-global.website-files.com/6597cc7be68d63ec0c8ce338/65ae95b4c88ea4ffb4b03be7_multiversx-token-metrics.pdf'
+    );
+  });
+});
 
 describe('Footer About Column', () => {
   beforeEach(() => {
@@ -238,7 +238,7 @@ describe('Footer About Column', () => {
   });
 });
 
-describe.only('Legal', () => {
+describe('Legal', () => {
   beforeEach(() => {
     cy.visit('/');
   });
